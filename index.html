@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New City Public High School, Golarchi</title>
+<meta name="description" content="New City Public High School, Golarchi — quality education, strong values, and a nurturing campus for students from Montessori to Matric.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   New City Public High School, Golarchi — Stylesheet
+   Palette: Deep Slate Navy #1B2A41, Brass Gold #B08B3F,
+            Warm Ivory #F7F3EA, Brick Red #8C2F2B, Ink #23262B
+   Type: 'Fraunces' (display serif) + 'Inter' (body/UI)
+   ============================================================ */
+
+:root{
+  --navy: #1B2A41;
+  --navy-deep: #121E30;
+  --gold: #B08B3F;
+  --gold-light: #D9BE84;
+  --ivory: #F7F3EA;
+  --ivory-dim: #EFE9DA;
+  --brick: #8C2F2B;
+  --ink: #23262B;
+  --line: #D9D2BF;
+  --white: #FFFFFF;
+
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', -apple-system, Segoe UI, sans-serif;
+
+  --maxw: 1120px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--ivory);
+  line-height: 1.6;
+}
+
+img{ max-width: 100%; display: block; }
+
+a{ color: inherit; text-decoration: none; }
+
+.wrap{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+h1, h2, h3, h4{
+  font-family: var(--serif);
+  color: var(--navy);
+  line-height: 1.15;
+  margin: 0 0 .5em;
+  font-weight: 600;
+}
+
+h1{ font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 500; }
+h2{ font-size: clamp(1.7rem, 3vw, 2.3rem); }
+h3{ font-size: 1.25rem; }
+
+p{ margin: 0 0 1em; color: #454a52; }
+
+.section-tag{
+  display: inline-block;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1.05rem;
+  margin-bottom: .4em;
+}
+
+.btn{
+  display: inline-block;
+  padding: 13px 28px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: .95rem;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn-primary{
+  background: var(--gold);
+  color: var(--navy-deep);
+}
+.btn-primary:hover{ background: var(--gold-light); }
+.btn-outline{
+  border-color: var(--ivory);
+  color: var(--ivory);
+}
+.btn-outline:hover{ background: rgba(247,243,234,.12); }
+.btn-outline-dark{
+  border-color: var(--navy);
+  color: var(--navy);
+}
+.btn-outline-dark:hover{ background: var(--navy); color: var(--ivory); }
+
+/* ---------------- Header / Nav ---------------- */
+.site-header{
+  background: var(--navy-deep);
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  border-bottom: 1px solid rgba(217,190,132,.25);
+}
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ivory);
+}
+.brand-mark{
+  width: 42px; height: 42px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  color: var(--gold-light);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.brand-text .brand-name{
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  letter-spacing: .01em;
+  color: var(--ivory);
+  display: block;
+}
+.brand-text .brand-loc{
+  font-size: .72rem;
+  color: var(--gold-light);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.nav-links{
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.nav-links a{
+  color: var(--ivory-dim);
+  font-size: .93rem;
+  padding: 6px 2px;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color .2s ease, color .2s ease;
+}
+.nav-links a:hover,
+.nav-links a.active{
+  color: var(--gold-light);
+  border-color: var(--gold);
+}
+
+.nav-cta{ display: flex; align-items: center; gap: 18px; }
+
+.nav-toggle{
+  display: none;
+  background: none; border: none;
+  color: var(--ivory);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  position: relative;
+  z-index: 10000;
+  padding: 6px 4px;
+}
+
+@media (max-width: 880px){
+  .nav-links{
+    position: fixed !important;
+    top: 68px; left: 0; right: 0;
+    background: var(--navy-deep);
+    flex-direction: column;
+    padding: 10px 28px 22px;
+    gap: 14px;
+    display: none;
+    border-bottom: 1px solid rgba(217,190,132,.25);
+    z-index: 9999;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+  }
+  .nav-links.ncphs-open{ display: flex !important; }
+  .nav-toggle{ display: block !important; }
+  .nav-cta .btn{ display: none; }
+}
+
+/* ---------------- Hero ---------------- */
+.hero{
+  background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 62%);
+  color: var(--ivory);
+  padding: 90px 0 70px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after{
+  content: "";
+  position: absolute;
+  right: -120px; top: -160px;
+  width: 420px; height: 420px;
+  border: 1px solid rgba(217,190,132,.18);
+  border-radius: 50%;
+}
+.hero-inner{
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+}
+.hero p.lede{
+  color: var(--ivory-dim);
+  font-size: 1.08rem;
+  max-width: 46ch;
+}
+.hero h1{ color: var(--white); }
+.hero-actions{ display: flex; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
+
+.hero-stats{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 46px;
+  border-top: 1px solid rgba(217,190,132,.25);
+  padding-top: 26px;
+}
+.hero-stats div strong{
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  color: var(--gold-light);
+  display: block;
+}
+.hero-stats div span{
+  font-size: .8rem;
+  color: var(--ivory-dim);
+  letter-spacing: .04em;
+}
+
+.hero-photo{
+  border: 1px solid rgba(217,190,132,.3);
+  aspect-ratio: 4/5;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(247,243,234,.04);
+}
+.photo-placeholder{
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px;
+  color: rgba(247,243,234,.45);
+  font-size: .82rem;
+  letter-spacing: .06em;
+  text-align: center;
+  padding: 20px;
+  border: 1px dashed rgba(247,243,234,.25);
+}
+.photo-placeholder svg{ opacity: .5; }
+
+@media (max-width: 880px){
+  .hero-inner{ grid-template-columns: 1fr; }
+  .hero-stats{ grid-template-columns: repeat(3,1fr); gap: 10px; }
+}
+
+/* ---------------- Generic page header (inner pages) ---------------- */
+.page-header{
+  background: var(--navy-deep);
+  color: var(--ivory);
+  padding: 64px 0 46px;
+}
+.page-header .section-tag{ color: var(--gold-light); }
+.page-header h1{ color: var(--white); margin-bottom: .2em; }
+.breadcrumb{ font-size: .85rem; color: var(--ivory-dim); }
+.breadcrumb a{ color: var(--gold-light); }
+
+/* ---------------- Sections ---------------- */
+section{ padding: 78px 0; }
+.section-alt{ background: var(--ivory-dim); }
+.section-navy{ background: var(--navy-deep); color: var(--ivory); }
+.section-navy h2{ color: var(--white); }
+.section-navy p{ color: var(--ivory-dim); }
+
+.section-head{ max-width: 640px; margin-bottom: 44px; }
+.section-head.center{ margin-left: auto; margin-right: auto; text-align: center; }
+
+/* Feature / value grid */
+.grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.grid-2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+@media (max-width: 880px){
+  .grid-3{ grid-template-columns: 1fr; }
+  .grid-2{ grid-template-columns: 1fr; }
+}
+
+.card{
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 32px 28px;
+}
+.card .num{
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.icon-badge{
+  width: 46px; height: 46px;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+/* About split */
+.split{
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+}
+.split.reverse{ grid-template-columns: 1.1fr .9fr; }
+.split.reverse .split-media{ order: 2; }
+@media (max-width: 880px){
+  .split, .split.reverse{ grid-template-columns: 1fr; }
+  .split.reverse .split-media{ order: 0; }
+}
+.split-media .photo-placeholder{
+  border-color: var(--line);
+  color: #9a9382;
+  aspect-ratio: 4/3;
+}
+.split-media{ background: var(--ivory-dim); border: 1px solid var(--line); }
+
+.quote-block{
+  border-left: 3px solid var(--gold);
+  padding-left: 22px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 24px 0;
+}
+
+/* Timeline (history) */
+.timeline{ list-style: none; margin: 0; padding: 0; border-left: 1.5px solid var(--line); }
+.timeline li{ position: relative; padding: 0 0 34px 30px; }
+.timeline li::before{
+  content: "";
+  position: absolute; left: -6.5px; top: 4px;
+  width: 12px; height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+.timeline .year{ font-family: var(--serif); color: var(--gold); font-size: 1.05rem; display: block; margin-bottom: 4px; }
+
+/* Values list */
+.value-list{ list-style: none; margin: 0; padding: 0; }
+.value-list li{
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 18px;
+}
+.value-list li:first-child{ padding-top: 0; }
+.value-list .v-label{ font-family: var(--serif); font-style: italic; color: var(--gold); }
+
+/* Table (fee / subjects) */
+table{ width: 100%; border-collapse: collapse; background: var(--white); }
+th, td{ text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: .95rem; }
+thead th{
+  background: var(--navy-deep);
+  color: var(--ivory);
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: .95rem;
+}
+tbody tr:hover{ background: var(--ivory-dim); }
+.table-wrap{ overflow-x: auto; border: 1px solid var(--line); }
+
+/* Faculty cards */
+.person-card{ background: var(--white); border: 1px solid var(--line); }
+.person-photo{ aspect-ratio: 1/1; background: var(--ivory-dim); border-bottom: 1px solid var(--line); }
+.person-photo .photo-placeholder{ border: none; color: #9a9382; }
+.person-body{ padding: 20px 22px 26px; }
+.person-body h3{ margin-bottom: 2px; }
+.person-role{ color: var(--gold); font-size: .85rem; letter-spacing: .03em; margin-bottom: 10px; display: block; }
+
+/* Gallery */
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.gallery-grid .g-item{ aspect-ratio: 4/3; background: var(--ivory-dim); border: 1px solid var(--line); }
+.gallery-grid .g-item.tall{ aspect-ratio: 4/5.4; grid-row: span 2; }
+.gallery-grid .photo-placeholder{ border: none; color: #9a9382; font-size: .74rem; }
+@media (max-width: 720px){ .gallery-grid{ grid-template-columns: repeat(2,1fr); } .gallery-grid .g-item.tall{ grid-row: span 1; aspect-ratio: 4/3; } }
+
+.filter-bar{ display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 34px; }
+.filter-btn{
+  padding: 9px 20px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  font-size: .85rem;
+  cursor: pointer;
+  color: var(--ink);
+  transition: all .2s ease;
+}
+.filter-btn:hover{ border-color: var(--gold); }
+.filter-btn.active{ background: var(--navy); color: var(--ivory); border-color: var(--navy); }
+
+/* CTA band */
+.cta-band{
+  background: var(--brick);
+  color: var(--ivory);
+  padding: 54px 0;
+  text-align: center;
+}
+.cta-band h2{ color: var(--white); }
+.cta-band p{ color: rgba(247,243,234,.85); }
+.cta-band .btn-primary{ background: var(--gold-light); }
+
+/* News / notice list */
+.notice-list{ list-style: none; margin: 0; padding: 0; }
+.notice-list li{
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.notice-date{
+  font-family: var(--serif);
+  color: var(--gold);
+  font-size: .95rem;
+  line-height: 1.2;
+}
+.notice-date small{ display: block; color: #8a8471; font-size: .72rem; letter-spacing: .06em; }
+.notice-list h4{ margin: 0; font-size: 1.05rem; }
+.tag-pill{
+  font-size: .72rem;
+  letter-spacing: .05em;
+  padding: 5px 12px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  white-space: nowrap;
+  height: fit-content;
+}
+
+/* Forms */
+.form-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-grid .full{ grid-column: 1 / -1; }
+@media (max-width: 640px){ .form-grid{ grid-template-columns: 1fr; } }
+label{ display: block; font-size: .85rem; margin-bottom: 6px; color: var(--navy); font-weight: 600; }
+input, select, textarea{
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  font-family: var(--sans);
+  font-size: .95rem;
+  color: var(--ink);
+}
+input:focus, select:focus, textarea:focus{
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+  border-color: var(--gold);
+}
+textarea{ resize: vertical; min-height: 130px; }
+.form-note{
+  padding: 14px 16px;
+  border-left: 3px solid var(--gold);
+  background: var(--ivory-dim);
+  font-size: .88rem;
+  margin-top: 18px;
+  display: none;
+}
+.form-note.show{ display: block; }
+
+/* Contact info cards */
+.contact-strip{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 40px;
+}
+@media (max-width: 880px){ .contact-strip{ grid-template-columns: 1fr; } }
+
+.map-frame{
+  aspect-ratio: 16/7;
+  background: var(--ivory-dim);
+  border: 1px solid var(--line);
+}
+
+/* FAQ accordion */
+.accordion-item{ border-bottom: 1px solid var(--line); }
+.accordion-q{
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 20px 4px;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--navy);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.accordion-q .plus{ color: var(--gold); font-size: 1.3rem; transition: transform .2s ease; flex-shrink: 0; }
+.accordion-item.open .plus{ transform: rotate(45deg); }
+.accordion-a{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease;
+  padding: 0 4px;
+}
+.accordion-item.open .accordion-a{ padding-bottom: 20px; }
+
+/* ---------------- Footer ---------------- */
+.site-footer{
+  background: var(--navy-deep);
+  color: var(--ivory-dim);
+  padding: 60px 0 26px;
+  font-size: .92rem;
+}
+.footer-grid{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(217,190,132,.2);
+}
+@media (max-width: 880px){ .footer-grid{ grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px){ .footer-grid{ grid-template-columns: 1fr; } }
+.footer-grid h4{ color: var(--gold-light); font-size: .95rem; margin-bottom: 16px; }
+.footer-grid ul{ list-style: none; margin: 0; padding: 0; }
+.footer-grid li{ margin-bottom: 10px; }
+.footer-grid a:hover{ color: var(--gold-light); }
+.footer-bottom{
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: .8rem;
+  color: #8a8f9c;
+}
+
+/* Skip link for accessibility */
+.skip-link{
+  position: absolute; left: -999px; top: auto;
+  background: var(--gold); color: var(--navy-deep);
+  padding: 10px 16px; z-index: 1000;
+}
+.skip-link:focus{ left: 12px; top: 12px; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="#home" class="brand">
+      <span class="brand-mark">NC</span>
+      <span class="brand-text">
+        <span class="brand-name">New City Public High School</span>
+        <span class="brand-loc">Golarchi</span>
+      </span>
+    </a>
+    <ul class="nav-links" id="ncphsNavLinks">
+      <li><a href="#home" class="nav-link" data-page="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-page="about">About</a></li>
+      <li><a href="#academics" class="nav-link" data-page="academics">Academics</a></li>
+      <li><a href="#admissions" class="nav-link" data-page="admissions">Admissions</a></li>
+      <li><a href="#faculty" class="nav-link" data-page="faculty">Faculty</a></li>
+      <li><a href="#gallery" class="nav-link" data-page="gallery">Gallery</a></li>
+      <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#admissions" class="btn btn-primary">Apply Now</a>
+      <button class="nav-toggle" id="ncphsNavToggle" onclick="ncphsToggleNav()" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="page" id="page-home" style="display:block">
+<!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="section-tag">Est. 1998 · Golarchi, Sindh</span>
+        <h1>Shaping character, curiosity, and confidence in every student.</h1>
+        <p class="lede">New City Public High School is Golarchi's trusted institution for quality education from Montessori through Matriculation, built on discipline, care, and academic excellence.</p>
+        <div class="hero-actions">
+          <a href="#admissions" class="btn btn-primary">Begin Admission</a>
+          <a href="#about" class="btn btn-outline">Discover Our Story</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>25+</strong><span>Years of Service</span></div>
+          <div><strong>1,200+</strong><span>Students Enrolled</span></div>
+          <div><strong>60+</strong><span>Qualified Faculty</span></div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          School photo — front building
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WELCOME -->
+  <section>
+    <div class="wrap split">
+      <div class="split-media">
+        <div class="photo-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          Principal's photo
+        </div>
+      </div>
+      <div>
+        <span class="section-tag">Welcome</span>
+        <h2>A message from the Principal</h2>
+        <p>At New City Public High School, we believe every child carries a distinct potential waiting to be shaped by the right guidance. Our mission is simple: build strong fundamentals, encourage honest curiosity, and raise students who carry themselves with confidence and integrity.</p>
+        <p>We invite you to visit our campus, meet our teachers, and see for yourself the environment we have built for your child's growth.</p>
+        <div class="quote-block">"Education is not preparation for life — it is life itself, and we treat every classroom accordingly."</div>
+        <a href="#about" class="btn btn-outline-dark">Read Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="section-tag">Why Families Choose Us</span>
+        <h2>Built on four commitments</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="icon-badge">A</span>
+          <h3>Academic Rigor</h3>
+          <p>A structured curriculum from Montessori to Matric, aligned with the Sindh Textbook Board and reinforced through regular assessment.</p>
+        </div>
+        <div class="card">
+          <span class="icon-badge">D</span>
+          <h3>Discipline &amp; Values</h3>
+          <p>A campus culture that places respect, punctuality, and honesty at the centre of daily school life.</p>
+        </div>
+        <div class="card">
+          <span class="icon-badge">C</span>
+          <h3>Caring Faculty</h3>
+          <p>Experienced, approachable teachers who know each student by name and track their progress closely.</p>
+        </div>
+        <div class="card">
+          <span class="icon-badge">F</span>
+          <h3>Full Development</h3>
+          <p>Sports, debates, and co-curricular activities that build confidence alongside classroom learning.</p>
+        </div>
+        <div class="card">
+          <span class="icon-badge">S</span>
+          <h3>Safe Campus</h3>
+          <p>A secure, well-maintained campus with supervised classrooms and clean, purpose-built facilities.</p>
+        </div>
+        <div class="card">
+          <span class="icon-badge">R</span>
+          <h3>Result-Oriented</h3>
+          <p>A consistent record of strong board results and student progression to leading colleges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Programs</span>
+        <h2>From first steps to matriculation</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>Montessori &amp; Primary</h3>
+          <p>Nursery through Class 5, focused on foundational literacy, numeracy, and social skills.</p>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>Middle School</h3>
+          <p>Class 6 to 8, expanding into science, social studies, and structured examinations.</p>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3>Matriculation</h3>
+          <p>Class 9 &amp; 10 with Science and General groups, preparing students for board examinations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">School News</span>
+        <h2>Notices &amp; Announcements</h2>
+      </div>
+      <ul class="notice-list">
+        <li>
+          <div class="notice-date">15 <small>SEP</small></div>
+          <h4>Admissions open for session 2026–27</h4>
+          <span class="tag-pill">Admissions</span>
+        </li>
+        <li>
+          <div class="notice-date">02 <small>SEP</small></div>
+          <h4>Annual sports gala scheduled for next month</h4>
+          <span class="tag-pill">Events</span>
+        </li>
+        <li>
+          <div class="notice-date">20 <small>AUG</small></div>
+          <h4>Mid-term examination datesheet issued</h4>
+          <span class="tag-pill">Academics</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Ready to join New City Public High School?</h2>
+      <p>Seats for the new academic session are limited. Start your child's admission today.</p>
+      <a href="#admissions" class="btn btn-primary" style="margin-top:18px;">Apply for Admission</a>
+    </div>
+  </section>
+</section>
+
+<section class="page" id="page-about" style="display:none">
+<section class="page-header">
+    <div class="wrap">
+      <span class="section-tag">About Us</span>
+      <h1>Our story, mission, and the people behind it.</h1>
+      <p class="breadcrumb"><a href="#home">Home</a> / About</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div class="split-media">
+        <div class="photo-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          Campus photo
+        </div>
+      </div>
+      <div>
+        <span class="section-tag">Who We Are</span>
+        <h2>A school built for Golarchi's future</h2>
+        <p>New City Public High School was founded with a clear purpose: to give the children of Golarchi access to the same quality of education found in the region's larger cities, without their families having to leave home to find it.</p>
+        <p>Over the years, we have grown from a small primary section into a complete institution offering education from Montessori through Matriculation, while holding on to the same values we started with — discipline, care, and academic honesty.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="section-tag">Our Foundation</span>
+        <h2>Mission &amp; Vision</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Mission</h3>
+          <p>To provide accessible, high-quality education that builds strong academic foundations, sound character, and the confidence students need to pursue their goals — within a safe and supportive campus.</p>
+        </div>
+        <div class="card">
+          <h3>Vision</h3>
+          <p>To be recognised as the leading educational institution in Golarchi and the wider Badin district, known for producing disciplined, capable, and community-minded graduates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Our Journey</span>
+        <h2>Milestones</h2>
+      </div>
+      <ul class="timeline">
+        <li>
+          <span class="year">1998</span>
+          <h4>School Founded</h4>
+          <p>New City Public High School opens its doors in Golarchi with a single primary section.</p>
+        </li>
+        <li>
+          <span class="year">2006</span>
+          <h4>Middle Section Introduced</h4>
+          <p>Classes extended up to Class 8 as student enrolment grew across the district.</p>
+        </li>
+        <li>
+          <span class="year">2013</span>
+          <h4>Matriculation Program Launched</h4>
+          <p>The school became a full high school, offering Science and General groups through Class 10.</p>
+        </li>
+        <li>
+          <span class="year">2024</span>
+          <h4>Campus Expansion</h4>
+          <p>New classrooms, a science laboratory, and a computer lab added to serve a growing student body.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">What Guides Us</span>
+        <h2>Our core values</h2>
+      </div>
+      <ul class="value-list">
+        <li><span class="v-label">Discipline</span><p style="margin:0">A structured environment where punctuality and respect are expected of every student and staff member.</p></li>
+        <li><span class="v-label">Integrity</span><p style="margin:0">Honesty in academics and conduct, taught and modelled by every teacher on campus.</p></li>
+        <li><span class="v-label">Excellence</span><p style="margin:0">A consistent standard of teaching quality, reviewed and improved every academic year.</p></li>
+        <li><span class="v-label">Community</span><p style="margin:0">Close cooperation between teachers and parents in support of each student's progress.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Come see our campus for yourself.</h2>
+      <p>Schedule a visit and meet our faculty before you decide.</p>
+      <a href="#contact" class="btn btn-primary" style="margin-top:18px;">Contact Us</a>
+    </div>
+  </section>
+</section>
+
+<section class="page" id="page-academics" style="display:none">
+<section class="page-header">
+    <div class="wrap">
+      <span class="section-tag">Academics</span>
+      <h1>A structured path from first steps to Matric.</h1>
+      <p class="breadcrumb"><a href="#home">Home</a> / Academics</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Program Levels</span>
+        <h2>Academic stages</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="num">Montessori</span>
+          <h3>Nursery – KG</h3>
+          <p>Play-based early learning focused on language readiness, motor skills, and social habits.</p>
+        </div>
+        <div class="card">
+          <span class="num">Primary</span>
+          <h3>Class 1 – 5</h3>
+          <p>Core subjects introduced with an emphasis on reading, writing, and basic mathematics.</p>
+        </div>
+        <div class="card">
+          <span class="num">Middle</span>
+          <h3>Class 6 – 8</h3>
+          <p>Expanded subject range including science and social studies, with structured term exams.</p>
+        </div>
+        <div class="card">
+          <span class="num">Secondary</span>
+          <h3>Class 9 – 10</h3>
+          <p>Science and General groups, preparing students for Sindh Board Matriculation examinations.</p>
+        </div>
+        <div class="card">
+          <span class="num">Co-curricular</span>
+          <h3>Beyond the classroom</h3>
+          <p>Sports, debate, and Islamic studies societies that run alongside the academic calendar.</p>
+        </div>
+        <div class="card">
+          <span class="num">Support</span>
+          <h3>Extra assistance</h3>
+          <p>After-class support sessions for students who need additional help ahead of examinations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Curriculum</span>
+        <h2>Subjects by level</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Level</th><th>Core Subjects</th><th>Additional Subjects</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Montessori (Nursery–KG)</td><td>English, Urdu, Numeracy</td><td>Rhymes, Art &amp; Craft</td></tr>
+            <tr><td>Primary (1–5)</td><td>English, Urdu, Mathematics, Science</td><td>Islamiat, Social Studies</td></tr>
+            <tr><td>Middle (6–8)</td><td>English, Urdu, Mathematics, Science</td><td>Islamiat, Pakistan Studies, Computer</td></tr>
+            <tr><td>Matric — Science Group</td><td>Physics, Chemistry, Biology/Computer, Mathematics</td><td>English, Urdu, Islamiat, Pak. Studies</td></tr>
+            <tr><td>Matric — General Group</td><td>Mathematics, General Science, Economics</td><td>English, Urdu, Islamiat, Pak. Studies</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split reverse">
+      <div>
+        <span class="section-tag">Facilities</span>
+        <h2>What supports the classroom</h2>
+        <p>Learning at New City Public High School is backed by facilities that give theory a practical footing — from lab work in the sciences to hands-on computer literacy.</p>
+        <ul class="value-list">
+          <li><span class="v-label">Science Lab</span><p style="margin:0">Equipped for Physics, Chemistry, and Biology practicals required at the Matric level.</p></li>
+          <li><span class="v-label">Computer Lab</span><p style="margin:0">Dedicated systems for computer studies from middle school onward.</p></li>
+          <li><span class="v-label">Library</span><p style="margin:0">A reading room stocked with textbooks, reference material, and storybooks.</p></li>
+        </ul>
+      </div>
+      <div class="split-media">
+        <div class="photo-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          Science lab photo
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Give your child a strong academic start.</h2>
+      <p>Admissions are open for the new academic session.</p>
+      <a href="#admissions" class="btn btn-primary" style="margin-top:18px;">Apply for Admission</a>
+    </div>
+  </section>
+</section>
+
+<section class="page" id="page-admissions" style="display:none">
+<section class="page-header">
+    <div class="wrap">
+      <span class="section-tag">Admissions</span>
+      <h1>Join New City Public High School.</h1>
+      <p class="breadcrumb"><a href="#home">Home</a> / Admissions</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">How It Works</span>
+        <h2>Admission process</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>Submit Inquiry</h3>
+          <p>Fill out the admission inquiry form below or visit the school office directly.</p>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>Assessment &amp; Interview</h3>
+          <p>Students are assessed at their applied grade level; parents meet with school administration.</p>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3>Confirm Enrollment</h3>
+          <p>Complete document submission and fee payment to secure the seat for the session.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Requirements</span>
+        <h2>Documents needed</h2>
+      </div>
+      <ul class="value-list">
+        <li><span class="v-label">Form B</span><p style="margin:0">Original and one photocopy of the child's Form B / birth certificate.</p></li>
+        <li><span class="v-label">Photos</span><p style="margin:0">Four recent passport-size photographs of the student.</p></li>
+        <li><span class="v-label">Report Card</span><p style="margin:0">Previous school's leaving certificate and last report card, where applicable.</p></li>
+        <li><span class="v-label">Parent CNIC</span><p style="margin:0">Photocopy of both parents' or guardian's CNIC.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Fee Structure</span>
+        <h2>Tuition &amp; admission fee</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Level</th><th>Admission Fee</th><th>Monthly Tuition</th></tr></thead>
+          <tbody>
+            <tr><td>Montessori (Nursery–KG)</td><td>Rs. 3,000</td><td>Rs. 1,500</td></tr>
+            <tr><td>Primary (Class 1–5)</td><td>Rs. 3,500</td><td>Rs. 1,800</td></tr>
+            <tr><td>Middle (Class 6–8)</td><td>Rs. 4,000</td><td>Rs. 2,200</td></tr>
+            <tr><td>Matric (Class 9–10)</td><td>Rs. 4,500</td><td>Rs. 2,800</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:16px;font-size:.85rem;color:#8a8471;">Fee structure is indicative and subject to confirmation by the school office at the time of admission.</p>
+    </div>
+  </section>
+
+  <!-- ADMISSION FORM -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Get Started</span>
+        <h2>Admission inquiry form</h2>
+      </div>
+      <form id="admission-form" class="form-grid">
+        <div>
+          <label for="stu-name">Student Full Name *</label>
+          <input type="text" id="stu-name" required>
+        </div>
+        <div>
+          <label for="stu-dob">Date of Birth *</label>
+          <input type="date" id="stu-dob" required>
+        </div>
+        <div>
+          <label for="stu-grade">Applying for Class *</label>
+          <select id="stu-grade" required>
+            <option value="">Select class</option>
+            <option>Nursery</option>
+            <option>KG</option>
+            <option>Class 1</option>
+            <option>Class 2</option>
+            <option>Class 3</option>
+            <option>Class 4</option>
+            <option>Class 5</option>
+            <option>Class 6</option>
+            <option>Class 7</option>
+            <option>Class 8</option>
+            <option>Class 9</option>
+            <option>Class 10</option>
+          </select>
+        </div>
+        <div>
+          <label for="par-name">Parent / Guardian Name *</label>
+          <input type="text" id="par-name" required>
+        </div>
+        <div>
+          <label for="par-phone">Contact Number *</label>
+          <input type="tel" id="par-phone" required placeholder="03XX-XXXXXXX">
+        </div>
+        <div>
+          <label for="par-email">Email Address</label>
+          <input type="email" id="par-email" placeholder="optional">
+        </div>
+        <div class="full">
+          <label for="par-address">Home Address *</label>
+          <textarea id="par-address" required></textarea>
+        </div>
+        <div class="full">
+          <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+          <div id="admission-note" class="form-note"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Common Questions</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item open">
+          <button class="accordion-q">When does admission open? <span class="plus">+</span></button>
+          <div class="accordion-a"><p>Admissions for the new academic session typically open in September and continue until seats are filled. Mid-session admissions are considered on a case-by-case basis.</p></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-q">Is there an entry test? <span class="plus">+</span></button>
+          <div class="accordion-a"><p>Students applying for Class 1 and above take a short assessment in English, Urdu, and Mathematics appropriate to the grade level.</p></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-q">Do you offer transport? <span class="plus">+</span></button>
+          <div class="accordion-a"><p>Please contact the school office directly to check current transport routes and availability for your area.</p></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-q">Can I visit the campus before applying? <span class="plus">+</span></button>
+          <div class="accordion-a"><p>Yes, campus visits are welcomed on school days between 9:00 AM and 1:00 PM. Please call ahead to arrange a time.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="page" id="page-faculty" style="display:none">
+<section class="page-header">
+    <div class="wrap">
+      <span class="section-tag">Faculty</span>
+      <h1>The people guiding our students.</h1>
+      <p class="breadcrumb"><a href="#home">Home</a> / Faculty</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="section-tag">Leadership</span>
+        <h2>School administration</h2>
+      </div>
+      <div class="grid-3">
+        <div class="person-card">
+          <div class="person-photo"><div class="photo-placeholder">Principal's photo</div></div>
+          <div class="person-body">
+            <h3>Muhammad Aslam Shar</h3>
+            <span class="person-role">Principal</span>
+            <p>Overseeing academic direction and daily administration with over 20 years in education.</p>
+          </div>
+        </div>
+        <div class="person-card">
+          <div class="person-photo"><div class="photo-placeholder">Vice Principal's photo</div></div>
+          <div class="person-body">
+            <h3>Rukhsana Bibi</h3>
+            <span class="person-role">Vice Principal</span>
+            <p>Responsible for curriculum coordination and student affairs across all sections.</p>
+          </div>
+        </div>
+        <div class="person-card">
+          <div class="person-photo"><div class="photo-placeholder">Coordinator's photo</div></div>
+          <div class="person-body">
+            <h3>Abdul Sattar Memon</h3>
+            <span class="person-role">Academic Coordinator</span>
+            <p>Manages examination scheduling, teacher supervision, and result tracking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Interested in teaching with us?</h2>
+      <p>We're always glad to hear from qualified, passionate educators.</p>
+      <a href="#contact" class="btn btn-primary" style="margin-top:18px;">Get in Touch</a>
+    </div>
+  </section>
+</section>
+
+<section class="page" id="page-gallery" style="display:none">
+<section class="page-header">
+    <div class="wrap">
+      <span class="section-tag">Gallery</span>
+      <h1>Life on campus.</h1>
+      <p class="breadcrumb"><a href="#home">Home</a> / Gallery</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="campus">Campus</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+        <button class="filter-btn" data-filter="sports">Sports</button>
+        <button class="filter-btn" data-filter="classroom">Classroom</button>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="g-item tall" data-category="campus"><div class="photo-placeholder">Campus — main building</div></div>
+        <div class="g-item" data-category="classroom"><div class="photo-placeholder">Classroom activity</div></div>
+        <div class="g-item" data-category="events"><div class="photo-placeholder">Annual day event</div></div>
+        <div class="g-item" data-category="sports"><div class="photo-placeholder">Sports day</div></div>
+        <div class="g-item" data-category="classroom"><div class="photo-placeholder">Science lab session</div></div>
+        <div class="g-item tall" data-category="events"><div class="photo-placeholder">Prize distribution</div></div>
+        <div class="g-item" data-category="campus"><div class="photo-placeholder">School entrance</div></div>
+        <div class="g-item" data-category="sports"><div class="photo-placeholder">Football match</div></div>
+        <div class="g-item" data-category="campus"><div class="photo-placeholder">Playground</div></div>
+        <div class="g-item" data-category="classroom"><div class="photo-placeholder">Computer lab</div></div>
+        <div class="g-item" data-category="events"><div class="photo-placeholder">Independence Day</div></div>
+        <div class="g-item" data-category="sports"><div class="photo-placeholder">Athletics</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Come experience it in person.</h2>
+      <p>Photos only tell part of the story — visit our campus to see the rest.</p>
+      <a href="#contact" class="btn btn-primary" style="margin-top:18px;">Plan a Visit</a>
+    </div>
+  </section>
+</section>
+
+<section class="page" id="page-contact" style="display:none">
+<section class="page-header">
+    <div class="wrap">
+      <span class="section-tag">Contact</span>
+      <h1>We'd love to hear from you.</h1>
+      <p class="breadcrumb"><a href="#home">Home</a> / Contact</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="contact-strip">
+        <div class="card">
+          <span class="icon-badge">@</span>
+          <h3>Email</h3>
+          <p>info@newcityschoolgolarchi.edu.pk</p>
+        </div>
+        <div class="card">
+          <span class="icon-badge">T</span>
+          <h3>Phone</h3>
+          <p>+92 300 0000000<br>+92 22 0000000</p>
+        </div>
+        <div class="card">
+          <span class="icon-badge">L</span>
+          <h3>Address</h3>
+          <p>Main Road, Golarchi, District Badin, Sindh, Pakistan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap split">
+      <div>
+        <span class="section-tag">Send a Message</span>
+        <h2>Contact form</h2>
+        <form id="contact-form">
+          <div class="form-grid">
+            <div>
+              <label for="c-name">Full Name *</label>
+              <input type="text" id="c-name" required>
+            </div>
+            <div>
+              <label for="c-phone">Phone Number *</label>
+              <input type="tel" id="c-phone" required>
+            </div>
+            <div class="full">
+              <label for="c-subject">Subject</label>
+              <input type="text" id="c-subject" placeholder="e.g. Admission query">
+            </div>
+            <div class="full">
+              <label for="c-message">Message *</label>
+              <textarea id="c-message" required></textarea>
+            </div>
+            <div class="full">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+              <div id="contact-note" class="form-note"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div>
+        <span class="section-tag">Visiting Hours</span>
+        <h2>Office timings</h2>
+        <ul class="value-list">
+          <li><span class="v-label">Mon–Fri</span><p style="margin:0">8:00 AM – 2:00 PM</p></li>
+          <li><span class="v-label">Saturday</span><p style="margin:0">9:00 AM – 12:00 PM</p></li>
+          <li><span class="v-label">Sunday</span><p style="margin:0">Closed</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Find Us</span>
+        <h2>Our location</h2>
+      </div>
+     <div class="map-frame reveal">
+        <iframe src="https://maps.google.com/maps?q=Golarchi%2C%20District%20Badin%2C%20Sindh%2C%20Pakistan&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to New City Public High School, Golarchi"></iframe>
+      </div>
+  </section>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>New City Public High School</h4>
+        <p style="color:var(--ivory-dim)">Main Road, Golarchi, District Badin, Sindh, Pakistan. Committed to quality education since 1998.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#faculty">Faculty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#admissions">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Main Road, Golarchi, Badin, Sindh</li>
+          <li>+92 300 0000000</li>
+          <li>info@newcityschoolgolarchi.edu.pk</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> New City Public High School, Golarchi. All rights reserved.</span>
+      <span>Designed for a brighter future.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Firebase SDK (compat) -->
+<script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-compat.js"></script>
+<script>
+/* ============================================================
+   Firebase Configuration
+   New City Public High School, Golarchi
+
+   1. Go to https://console.firebase.google.com
+   2. Create a project (or open an existing one)
+   3. Project Settings > General > "Your apps" > Web app (</>)
+   4. Copy the config values Firebase gives you and paste them
+      below, replacing the placeholder strings.
+   ============================================================ */
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase (uses the compat SDK loaded via <script> tags in each page)
+firebase.initializeApp(firebaseConfig);
+
+// Firestore database reference — used to save form submissions
+const db = firebase.firestore();
+
+</script>
+<script>
+/* Mobile nav toggle — global function, also wired via inline onclick
+   as a fallback in case the platform (e.g. Blogger) strips or delays
+   addEventListener-based bindings. Uses unique names to avoid clashing
+   with the host site's own scripts/classes. */
+function ncphsToggleNav() {
+  var links = document.getElementById('ncphsNavLinks') || document.querySelector('.nav-links');
+  var toggle = document.getElementById('ncphsNavToggle') || document.querySelector('.nav-toggle');
+  if (!links) return;
+  links.classList.toggle('ncphs-open');
+  var expanded = links.classList.contains('ncphs-open');
+  if (toggle) toggle.setAttribute('aria-expanded', expanded);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* Mobile nav toggle — bind again via JS in case inline onclick is stripped */
+  var toggle = document.getElementById('ncphsNavToggle') || document.querySelector('.nav-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', ncphsToggleNav);
+  }
+
+  /* Mark current page link as active */
+  var here = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(function (a) {
+    var target = a.getAttribute('href');
+    if (target === here) a.classList.add('active');
+  });
+
+  /* Footer year */
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* FAQ accordion */
+  document.querySelectorAll('.accordion-item').forEach(function (item) {
+    var q = item.querySelector('.accordion-q');
+    if (!q) return;
+    q.addEventListener('click', function () {
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.accordion-item.open').forEach(function (openItem) {
+        if (openItem !== item) openItem.classList.remove('open');
+      });
+      item.classList.toggle('open', !isOpen);
+    });
+  });
+
+  /* Gallery filter */
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var galleryItems = document.querySelectorAll('.gallery-grid .g-item');
+  if (filterBtns.length && galleryItems.length) {
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var cat = btn.getAttribute('data-filter');
+        galleryItems.forEach(function (item) {
+          var show = cat === 'all' || item.getAttribute('data-category') === cat;
+          item.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  }
+
+  /* Admission form: validation + Firestore save (falls back gracefully if Firebase isn't loaded) */
+  var admissionForm = document.getElementById('admission-form');
+  if (admissionForm) {
+    admissionForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var note = document.getElementById('admission-note');
+      var required = admissionForm.querySelectorAll('[required]');
+      var valid = true;
+      required.forEach(function (field) {
+        if (!field.value.trim()) valid = false;
+      });
+      if (!valid) {
+        note.textContent = 'Please fill in all required fields before submitting.';
+        note.classList.add('show');
+        return;
+      }
+
+      var submitBtn = admissionForm.querySelector('button[type="submit"]');
+      var record = {
+        studentName: document.getElementById('stu-name').value.trim(),
+        dateOfBirth: document.getElementById('stu-dob').value,
+        appliedClass: document.getElementById('stu-grade').value,
+        parentName: document.getElementById('par-name').value.trim(),
+        phone: document.getElementById('par-phone').value.trim(),
+        email: document.getElementById('par-email').value.trim(),
+        address: document.getElementById('par-address').value.trim(),
+        submittedAt: (typeof firebase !== 'undefined' && firebase.firestore)
+          ? firebase.firestore.FieldValue.serverTimestamp()
+          : new Date().toISOString()
+      };
+
+      function showSuccess() {
+        note.textContent = 'Thank you. Your inquiry has been recorded. Our admissions office will contact you within two working days.';
+        note.classList.add('show');
+        admissionForm.reset();
+      }
+
+      // If Firebase is configured (js/firebase-config.js loaded before this file), save to Firestore
+      if (typeof db !== 'undefined') {
+        if (submitBtn) submitBtn.disabled = true;
+        db.collection('admissionInquiries').add(record)
+          .then(function () {
+            if (submitBtn) submitBtn.disabled = false;
+            showSuccess();
+          })
+          .catch(function (err) {
+            if (submitBtn) submitBtn.disabled = false;
+            note.textContent = 'Something went wrong while submitting. Please try again or contact the school office directly.';
+            note.classList.add('show');
+            console.error('Firestore error:', err);
+          });
+      } else {
+        // No Firebase configured yet — just confirm locally
+        showSuccess();
+      }
+    });
+  }
+
+  /* Contact form: validation + Firestore save (falls back gracefully if Firebase isn't loaded) */
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var note = document.getElementById('contact-note');
+
+      var record = {
+        name: document.getElementById('c-name').value.trim(),
+        phone: document.getElementById('c-phone').value.trim(),
+        subject: document.getElementById('c-subject').value.trim(),
+        message: document.getElementById('c-message').value.trim(),
+        submittedAt: (typeof firebase !== 'undefined' && firebase.firestore)
+          ? firebase.firestore.FieldValue.serverTimestamp()
+          : new Date().toISOString()
+      };
+
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+
+      function showSuccess() {
+        note.textContent = 'Thank you for reaching out. We will respond to your message shortly.';
+        note.classList.add('show');
+        contactForm.reset();
+      }
+
+      if (typeof db !== 'undefined') {
+        if (submitBtn) submitBtn.disabled = true;
+        db.collection('contactMessages').add(record)
+          .then(function () {
+            if (submitBtn) submitBtn.disabled = false;
+            showSuccess();
+          })
+          .catch(function (err) {
+            if (submitBtn) submitBtn.disabled = false;
+            note.textContent = 'Something went wrong while sending. Please try again or contact the school office directly.';
+            note.classList.add('show');
+            console.error('Firestore error:', err);
+          });
+      } else {
+        showSuccess();
+      }
+    });
+  }
+
+});
+
+
+/* ---- Single-file page router (hash based) ---- */
+function ncRouteTo(page){
+  var valid = ['home','about','academics','admissions','faculty','gallery','contact'];
+  if (valid.indexOf(page) === -1) page = 'home';
+  valid.forEach(function(p){
+    var el = document.getElementById('page-' + p);
+    if (el) el.style.display = (p === page) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.nav-link').forEach(function(a){
+    a.classList.toggle('active', a.getAttribute('data-page') === page);
+  });
+  var mobileLinks = document.getElementById('ncphsNavLinks') || document.querySelector('.nav-links');
+  if (mobileLinks) mobileLinks.classList.remove('ncphs-open');
+  window.scrollTo(0,0);
+}
+function ncCurrentPage(){
+  var h = window.location.hash.replace('#','');
+  return h || 'home';
+}
+window.addEventListener('hashchange', function(){ ncRouteTo(ncCurrentPage()); });
+document.addEventListener('DOMContentLoaded', function(){ ncRouteTo(ncCurrentPage()); });
+
+</script>
+</body>
+</html>
